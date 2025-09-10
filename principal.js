@@ -1,53 +1,61 @@
-//MUDA OS TITULOS
-var tsecundario = document.querySelector(".container-titulo-dois");
-tsecundario.textContent = "Meus pacientes";
+//Este bloco altera o subtitulo e o titulo//
+var tituloSegundario = document.querySelector(".titulo-secundario");
+tituloSegundario.textContent = "Meus clientes";
+var titulo = document.querySelector(".titulo");
+titulo.textContent = "M Nutrição";
 
-var titulo = document.querySelector(".container-titulo");
-titulo.textContent = "João Nutrição";
-
-//SELECIONA PACIENTE
+//Este bloco determina a variavel peso do primeiro paciente//
 var pacientes = document.querySelectorAll(".paciente");
 
-for (var i = 0; i < pacientes.length; i++) {
-    var paciente = pacientes[i];
-    
-    //OBTÉM O VALOR PESO
-    var tdPeso = paciente.querySelector(".info-peso");
-    var peso = tdPeso.textContent;
-    console.log(peso);
+for(var i = 0; i < pacientes.length; i++){
 
-    //OBTÉM O VALOR ALTURA
-    var tdAltura = document.querySelector(".info-altura");
-    var altura = tdAltura.textContent;
-    console.log(altura);
+  var paciente = pacientes[i];
 
-    //CALCULA IMC
-    var IMC = peso / (altura * altura);
+  var tdPeso = paciente.querySelector(".info-peso");
+  var peso = tdPeso.textContent;
 
-    //VALORES BOOLEANOS
-    var pesoValido = true;
-    var alturaValida = true;
 
-    if(pesoValido && alturaValida){
-        var tdIMC = paciente.querySelector(".info-imc");
-        tdIMC.textContent = IMC;
-    }
+  //Este bloco determina a variavel altura do primeiro paciente//
 
-    //AVISO DE VALOR INVÁLIDO
-    if(peso <= 0 || peso >= 1000){
-        var pesoValido = false;
-        tdIMC.textContent = "peso invalido";
-        paciente.classList.add("paciente-invalido");
-        
-    }
+  var tdAltura = paciente.querySelector(".info-altura");
+  var altura = tdAltura.textContent;
 
-    if(altura < 0 || altura > 3.00){
-        var alturaValida = false;
-        alert("Altura inválida!");
-        tdIMC.textContent = "altura invalido";
-        paciente.classList.add("pacienter-invalido");
-    }
 
-   
+  //Este bloco determina a variavel IMC do primeiro paciente e muda seu conteúdo//
+  var IMC = peso / (altura * altura)
+
+  //valores booleanos
+  var pesoValido = true;
+  var alturaValida = true;
+
+  if (pesoValido && alturaValida) {
+    var tdIMC = paciente.querySelector(".info-imc");
+    tdIMC.textContent = IMC.toFixed(2);
+  }
+
+  //alerta caso o peso e altura sejam invalidos
+  if (peso <= 0 || peso >= 1000) {
+    var pesoValido = false;
+    tdIMC.textContent = "peso invalido";
+    paciente.classList.add("paciente-invalido");
+  }
+
+  if (altura <= 0 || altura >= 3.00) {
+    var alturaValida = false;
+    tdIMC.textContent = "altura invalido";
+    paciente.classList.add("paciente-invalido");
+  }
 }
+
+  titulo.addEventListener('click',function(){
+    alert("M nutrição foi catucado");
+  });
+  
+
+
+  
+
+
+  
+  
 
