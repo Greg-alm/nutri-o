@@ -51,6 +51,18 @@ for(var i = 0; i < pacientes.length; i++){
     alert("M nutrição foi catucado");
   });
   
+  var botaoAdd = document.querySelector("#adicionar-paciente");
+
+  botaoAdd.addEventListener('click',
+    function(event){
+    event.preventDefault();
+  console.log("fui clicado");
+
+
+alert("paciente adicionado");
+
+    }
+  );
 
 
   
