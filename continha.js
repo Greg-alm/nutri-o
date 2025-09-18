@@ -9,11 +9,18 @@ g = 7;
 h = 8;
 i = 9;
 
-var soma = a + h;
+var soma = i + i;
 console.log(soma);
+
+
+
+
+
+
 };
 
-somaVariaveis();
 
-for(var i = 0; i > 9 );
-console.log(passou);
+
+
+
+

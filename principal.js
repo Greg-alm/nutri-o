@@ -56,10 +56,20 @@ for(var i = 0; i < pacientes.length; i++){
   botaoAdd.addEventListener('click',
     function(event){
     event.preventDefault();
+var formulario = document.querySelector('#form-adiciona');
+
+var nome= formulario.nome.value;
+var nome= formulario.altura.value;
+var nome= formulario.peso.value;
+var nome= formulario.gordura.value;
+
+console.log(nome);
+console.log(altura);
+console.log(peso);
+console.log(gordura);
+
+
   console.log("fui clicado");
-
-
-alert("paciente adicionado");
 
     }
   );
