@@ -59,17 +59,40 @@ for(var i = 0; i < pacientes.length; i++){
 var formulario = document.querySelector('#form-adiciona');
 
 var nome= formulario.nome.value;
-var nome= formulario.altura.value;
-var nome= formulario.peso.value;
-var nome= formulario.gordura.value;
+var altura = formulario.altura.value;
+var peso = formulario.peso.value;
+var gordura = formulario.gordura.value;
 
 console.log(nome);
 console.log(altura);
 console.log(peso);
 console.log(gordura);
 
+//cria o elemento tr
+var pacienteTr = document.createElement("tr");
 
-  console.log("fui clicado");
+//cria as tags <td>
+var nomeTd = document.createElement("td");
+var alturaTd = document.createElement("td");
+var pesoTd = document.createElement("td");
+var gorduraTd = document.createElement("td");
+var imcTd = document.createElement("td");
+
+// adiciona os valores digitados a <td> criada
+nomeTd.textContent = nome;
+pesoTd.textContent = peso;
+alturaTd.textContent = altura;
+gorduraTd.textContent = gordura;
+
+
+pacienteTr.appendChild(nomeTd);
+pacienteTr.appendChild(alturaTd);
+pacienteTr.appendChild(pesoTd);
+pacienteTr.appendChild(gorduraTd);
+
+var tabela = document.querySelector("#tabela-pacientes");
+tabela.appendChild(pacienteTr);
+
 
     }
   );
